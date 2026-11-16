@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión | Taller de Motos Carlos Zampedri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <div class="contenedor-form">
+    <h1 class="titulo">Iniciar Sesión</h1>
+    <p id="msg-ok" style="display:none;color:#7CFC98;text-align:center;margin-bottom:1rem;">Cuenta registrada correctamente. Iniciá sesión para continuar.</p>
+    <p id="error-login" style="display:none;color:#ff6b6b;text-align:center;margin-bottom:1rem;">Usuario o contraseña incorrectos. Volvé a intentar e ingresá tus datos nuevamente.</p>
+    <form action="../php/login.php" method="POST">
+      <div class="campos">
+        <div class="campo">
+          <label for="txtusuario">Usuario:</label>
+          <input type="text" id="txtusuario" name="txtusuario" required>
+        </div>
+        <div class="campo">
+          <label for="txtpassword">Contraseña:</label>
+          <input type="password" id="txtpassword" name="txtpassword" required>
+        </div>
+      </div>
+      <p class="boton">
+        <input type="submit" value="Ingresar">
+      </p>
+      <p class="registro-link">
+        <a href="registro.html">Registrarse</a>
+      </p>
+    </form>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('error') === '1') {
+      document.getElementById('error-login').style.display = 'block';
+    }
+    if (params.get('registrado') === '1') {
+      document.getElementById('msg-ok').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

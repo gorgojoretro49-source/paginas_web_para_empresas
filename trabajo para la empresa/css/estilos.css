@@ -1,0 +1,209 @@
+:root {
+    --zamp-negro: #121212;
+    --zamp-gris-oscuro: #1a1a1a;
+    --zamp-gris: #242424;
+    --zamp-rojo: #d62828;
+    --zamp-rojo-hover: #b71c1c;
+    --zamp-blanco: #ffffff;
+    --zamp-gris-claro: #f5f5f5;
+    --zamp-texto: #f2f2f2;
+    --zamp-texto-sec: #c8c8c8;
+    --zamp-borde: rgba(255,255,255,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--zamp-negro);
+    color: var(--zamp-texto);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+.zampedri-header { position: relative; }
+.zampedri-navbar {
+    background: rgba(18,18,18,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--zamp-rojo);
+    padding: 0.5rem 0;
+}
+.zampedri-brand { display: flex; align-items: center; gap: 0.75rem; line-height: 1; }
+.zampedri-brand-logo { width: 42px; height: 42px; object-fit: cover; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); }
+.zampedri-brand-text { display: flex; flex-direction: column; }
+.zampedri-brand-top { font-family: 'Oswald', sans-serif; font-size: 0.78rem; letter-spacing: 3px; color: var(--zamp-texto-sec); }
+.zampedri-brand-bottom { font-family: 'Oswald', sans-serif; font-size: 1.35rem; font-weight: 700; letter-spacing: 1.5px; color: var(--zamp-blanco); }
+.zampedri-nav-list { gap: 0.2rem; }
+.zampedri-nav-link, .zampedri-user-pill {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 0.9rem;
+    color: var(--zamp-texto) !important;
+    padding: 0.55rem 0.75rem !important;
+}
+.zampedri-nav-link:hover, .zampedri-nav-link:focus { color: var(--zamp-blanco) !important; background: rgba(214,40,40,0.18); }
+.zampedri-user-pill { color: #ffd7d7 !important; background: rgba(214,40,40,0.12); border: 1px solid rgba(214,40,40,0.35); }
+.navbar-toggler { border: 1px solid rgba(255,255,255,0.35); }
+.navbar-toggler:focus { box-shadow: none; }
+
+.zampedri-hero {
+    min-height: 100vh;
+    padding-top: 95px;
+    background:
+        linear-gradient(100deg, rgba(10,10,10,0.95) 0%, rgba(18,18,18,0.82) 55%, rgba(18,18,18,0.7) 100%),
+        radial-gradient(circle at top right, rgba(214,40,40,0.25), transparent 35%),
+        url('../img/foto1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.zampedri-hero-badge {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    color: #fff;
+    background: rgba(214,40,40,0.18);
+    border: 1px solid rgba(214,40,40,0.5);
+    padding: 0.45rem 0.8rem;
+    margin-bottom: 1rem;
+}
+.zampedri-hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.2rem, 5.5vw, 4.4rem);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+.zampedri-hero-subtitle { font-family: 'Oswald', sans-serif; font-size: clamp(1.3rem,3vw,2.2rem); color: var(--zamp-rojo); letter-spacing: 5px; margin-bottom: 1rem; text-transform: uppercase; }
+.zampedri-hero-text { font-size: 1.08rem; color: var(--zamp-texto-sec); max-width: 720px; margin-bottom: 1.6rem; }
+.zampedri-hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+.zampedri-hero-highlights { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0.8rem; margin-top: 1.8rem; }
+.zampedri-highlight {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--zamp-borde);
+    border-top: 3px solid var(--zamp-rojo);
+    padding: 0.9rem 1rem;
+}
+.zampedri-highlight strong { display: block; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 0.95rem; margin-bottom: 0.2rem; }
+.zampedri-highlight span { color: var(--zamp-texto-sec); font-size: 0.92rem; line-height: 1.4; }
+
+.zampedri-btn-primary, .zampedri-btn-outline {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0;
+    transition: all .25s ease;
+}
+.zampedri-btn-primary { background: var(--zamp-rojo); color: #fff; border: 1px solid var(--zamp-rojo); }
+.zampedri-btn-primary:hover, .zampedri-btn-primary:focus { background: var(--zamp-rojo-hover); border-color: var(--zamp-rojo-hover); color: #fff; transform: translateY(-2px); }
+.zampedri-btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.55); }
+.zampedri-btn-outline:hover, .zampedri-btn-outline:focus { background: #fff; color: #111; border-color: #fff; transform: translateY(-2px); }
+
+.zampedri-strip { background: linear-gradient(90deg, #1b1b1b, #222); border-bottom: 1px solid var(--zamp-borde); padding: 1.2rem 0; }
+.zampedri-strip-item { padding: 0.4rem 0.2rem; }
+.zampedri-strip-title { display: block; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
+.zampedri-strip-text { color: var(--zamp-texto-sec); font-size: 0.95rem; }
+
+.zampedri-section { padding: 4.8rem 0; background: var(--zamp-negro); }
+.zampedri-section-alt { background: var(--zamp-gris-oscuro); }
+.zampedri-section-title { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: clamp(1.9rem,4vw,2.8rem); letter-spacing: 3px; margin-bottom: 0.5rem; }
+.zampedri-section-subtitle { color: var(--zamp-texto-sec); font-size: 1.02rem; }
+
+.zampedri-card-service, .zampedri-info-box, .zampedri-form-wrap, .zampedri-card-product {
+    background: linear-gradient(180deg, rgba(36,36,36,0.95) 0%, rgba(26,26,26,0.98) 100%);
+    border: 1px solid var(--zamp-borde);
+}
+.zampedri-card-service { padding: 2rem 1.7rem; position: relative; overflow: hidden; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.zampedri-card-service::after { content:''; position:absolute; top:0; left:0; width:100%; height:3px; background: linear-gradient(90deg, var(--zamp-rojo), transparent); }
+.zampedri-card-service:hover, .zampedri-card-product:hover { transform: translateY(-5px); border-color: rgba(214,40,40,0.55); box-shadow: 0 18px 30px -24px rgba(214,40,40,0.7); }
+.zampedri-card-service-icon { width: 58px; height: 58px; border: 2px solid var(--zamp-rojo); display:flex; align-items:center; justify-content:center; margin-bottom: 1.2rem; font-size: 1.6rem; }
+.zampedri-card-service-title, .zampedri-info-title, .zampedri-card-product-title { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.8rem; }
+.zampedri-list li { position: relative; padding-left: 1.4rem; margin-bottom: 0.65rem; color: var(--zamp-texto-sec); }
+.zampedri-list li::before { content: '▸'; position: absolute; left: 0; color: var(--zamp-rojo); }
+
+.zampedri-brands-wrap { display:flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+.zampedri-brand-pill {
+    border: 1px solid rgba(255,255,255,0.22);
+    padding: 0.8rem 1.8rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    background: rgba(255,255,255,0.02);
+    transition: all .25s ease;
+}
+.zampedri-brand-pill:hover { background: var(--zamp-rojo); border-color: var(--zamp-rojo); }
+
+.zampedri-card-product { height: 100%; display:flex; flex-direction: column; overflow:hidden; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.zampedri-card-product-body { padding: 1.6rem; display:flex; flex-direction: column; gap: 0.7rem; flex:1; }
+.zampedri-card-product-tag { align-self:flex-start; background: var(--zamp-rojo); color:#fff; font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:1.5px; padding:0.25rem 0.7rem; font-size:0.78rem; }
+.zampedri-card-product-price { font-family:'Oswald',sans-serif; font-size: 2rem; color:#fff; margin-top: 0.2rem; }
+.zampedri-card-product-note, .zampedri-note { color: var(--zamp-texto-sec); font-size: 0.95rem; }
+
+.zampedri-table-wrap, .zampedri-carousel, .zampedri-map-wrap { border: 1px solid var(--zamp-borde); }
+.zampedri-carousel { box-shadow: 0 30px 50px -35px rgba(214,40,40,0.45); }
+.zampedri-carousel-img { width: 100%; height: clamp(240px, 55vw, 560px); object-fit: cover; object-position: center; background: #111; }
+.zampedri-carousel-caption { background: linear-gradient(90deg, rgba(18,18,18,0.92), transparent); text-align:left; left:0; right:0; bottom:0; padding:1.3rem 2rem; font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:2px; }
+
+.zampedri-form-wrap { padding: clamp(1.4rem,4vw,2.6rem); }
+.zampedri-label { font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:1.5px; color:#fff; }
+.zampedri-input, .zampedri-textarea {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 0;
+    color: #fff;
+    padding: 0.75rem 0.95rem;
+}
+.zampedri-input:focus, .zampedri-textarea:focus { background: rgba(255,255,255,0.03); color:#fff; border-color: var(--zamp-rojo); box-shadow: 0 0 0 0.15rem rgba(214,40,40,0.15); }
+.zampedri-input::placeholder, .zampedri-textarea::placeholder { color: rgba(200,200,200,0.55); }
+.zampedri-input option { background: #1f1f1f; color:#fff; }
+.zampedri-check { color: var(--zamp-texto-sec); }
+.form-check-input { background-color: transparent; border: 1px solid rgba(255,255,255,0.4); border-radius: 0; }
+.form-check-input:checked { background-color: var(--zamp-rojo); border-color: var(--zamp-rojo); }
+.form-check-input:focus { box-shadow: none; }
+.zampedri-btn-form { margin-top: 0.5rem; }
+
+.zampedri-info-box { padding: clamp(1.4rem,4vw,2.2rem); height: 100%; display:flex; flex-direction: column; gap: 0.8rem; }
+.zampedri-info-text { color: var(--zamp-texto-sec); margin: 0; }
+.zampedri-redes { display:flex; flex-wrap: wrap; gap: 0.8rem 1.2rem; }
+.zampedri-red-link { color:#fff; font-family:'Oswald',sans-serif; letter-spacing:1.5px; text-transform:uppercase; border-bottom: 1px solid transparent; }
+.zampedri-red-link:hover { color: var(--zamp-rojo); border-color: var(--zamp-rojo); }
+.zampedri-map-wrap { min-height: 360px; height: 100%; }
+.zampedri-map { width:100%; height:100%; min-height: 360px; border:0; filter: grayscale(1) contrast(1.05); }
+
+.zampedri-footer { background:#101010; border-top:2px solid var(--zamp-rojo); padding:2.4rem 0 1.8rem; position: relative; }
+.zampedri-footer-brand { font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:4px; margin-bottom:0.4rem; }
+.zampedri-footer-text { color: var(--zamp-texto-sec); }
+.zampedri-footer-copy { color: rgba(200,200,200,0.55); margin-top: 0.8rem; }
+.zampedri-back-top { position:fixed; right:1.1rem; bottom:1.1rem; width:46px; height:46px; display:flex; align-items:center; justify-content:center; background:var(--zamp-rojo); color:#fff; font-size:1.3rem; border-radius:50%; opacity:0; visibility:hidden; transition: all .25s ease; z-index:1030; }
+.zampedri-back-top.visible { opacity:1; visibility:visible; }
+.zampedri-back-top:hover { transform: translateY(-3px); color:#fff; }
+
+.table-dark { --bs-table-bg: #1f1f1f; --bs-table-striped-bg: #242424; --bs-table-border-color: rgba(255,255,255,0.08); }
+.table-dark th { font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:1px; font-weight:500; }
+
+@media (max-width: 991px) {
+    html { scroll-padding-top: 80px; }
+    .zampedri-nav-list { padding-top: 0.8rem; }
+    .zampedri-hero { text-align: center; }
+    .zampedri-hero-actions { justify-content: center; }
+    .zampedri-hero-highlights { grid-template-columns: 1fr; text-align: left; }
+    .zampedri-carousel-img { height: min(52vh, 420px); }
+}
+@media (max-width: 575px) {
+    .zampedri-brand-bottom { font-size: 1.15rem; }
+    .zampedri-brand-logo { width: 36px; height: 36px; }
+    .zampedri-btn-primary, .zampedri-btn-outline { width: 100%; }
+    .zampedri-brand-pill { width: 100%; text-align:center; letter-spacing:3px; }
+    .zampedri-form-wrap, .zampedri-card-service { padding: 1.4rem; }
+    .zampedri-carousel-caption { padding: 0.9rem 1.1rem; letter-spacing:1px; }
+}
